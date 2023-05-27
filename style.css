@@ -30,6 +30,7 @@ html {
   font-size: 5vw;
   margin: auto;
 }
+
 .weather-card .rows:nth-child(1){
   margin: 3vw 0 0 0 ;
   /* background: red; */
@@ -43,14 +44,31 @@ html {
   /* background: blue; */
   border-radius: 3vw;
 }
-.weather-card .rows:nth-child(2){
+.weather-card .rows-prop{
   background: white;
   border-radius: 3vw;
   display: grid;
-  grid: repeat(5,6vw)/100%;
+  grid: repeat(2,15vw)/repeat(3,25vw);
   grid-gap: 1vw;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding: 1.5vw .5vw 0 .5vw;
+  
 }
+.rows-prop-box{
+  background: #e3e3e3;
+  color: black;
+  font-weight: bold;
+  border-radius: 3vw;
+  display: grid;
+  grid: auto auto/auto;
+  justify-content: space-around;
+  padding: 2vw 0;  
+
+}
+.rows-prop-box p{
+  margin: 0;
+}
+
 .other-cities{
   display: grid;
   grid: repeat(2,15vw)/repeat(3,25vw);

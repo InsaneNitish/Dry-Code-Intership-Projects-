@@ -19,16 +19,16 @@ function showWeather(city) {
     .then(response => response.json())
     .then((response) => {
       console.log(response);
-      cloud_pct.innerHTML= "Cloud perc. "+response.cloud_pct + "%"
-      // feels_like=response.feels_like
-      humidity.innerHTML="Humidity "+response.humidity+ "%"
-      max_temp.innerHTML="Max temp. "+response.max_temp+"°C" 
-      min_temp.innerHTML="Min temp. "+response.min_temp+"°C" 
+      cloud_pct.innerHTML=response.cloud_pct+"%"
+      feels_like.innerHTML=response.feels_like+"°C"
+      humidity.innerHTML=response.humidity+"%"
+      max_temp.innerHTML=response.max_temp+"°C"
+      min_temp.innerHTML=response.min_temp+"°C" 
       // sunrise: 1683290760
       // sunset: 1683343558
       temp.innerHTML= response.temp + "°C"
       // wind_degrees: 200
-      wind_speed.innerHTML= "wind speed "+response.wind_speed + " Km/h"
+      wind_speed.innerHTML=response.wind_speed + " Km/h"
       let w_img=document.getElementById('w_img');
       let c_bg=document.getElementById('c_bg');
       if(response.cloud_pct>70){
