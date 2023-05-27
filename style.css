@@ -1,0 +1,95 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+.weather-card{
+  width: 90vw;
+  height: 100vw;
+  margin: 5vw auto;
+  background-color: skyblue;
+  border-radius: 5vw;
+  display: grid;
+  grid: 28vw 35vw 35vw/80vw;
+  grid-gap: 2vw;
+  justify-content: space-around;
+  align-items: centre;
+}
+.rows img{
+  width: 20vw;
+  aspect-ratio: 1;
+}
+.rows i{
+  font-size: 5vw;
+  margin: auto;
+}
+.rows h3{
+  font-size: 1.8rem;
+  margin: auto;
+}
+.rows span{
+  font-size: 5vw;
+  margin: auto;
+}
+.weather-card .rows:nth-child(1){
+  margin: 3vw 0 0 0 ;
+  /* background: red; */
+  border-radius: 3vw;
+  display: grid;
+  grid: 25vw/20vw 15vw 20vw;
+  justify-content: space-around;
+  grid-gap: 1vw;
+}
+.weather-card .rows:nth-child(1):nth-child(n){
+  /* background: blue; */
+  border-radius: 3vw;
+}
+.weather-card .rows:nth-child(2){
+  background: white;
+  border-radius: 3vw;
+  display: grid;
+  grid: repeat(5,6vw)/100%;
+  grid-gap: 1vw;
+  justify-content: space-evenly;
+}
+.other-cities{
+  display: grid;
+  grid: repeat(2,15vw)/repeat(3,25vw);
+  grid-gap: 2vw;
+  justify-content: space-around;
+}
+
+.other-cities div:nth-child(n){
+  color: white;
+  font-weight: bold;
+  border-radius: 3vw;
+  display: grid;
+  grid: auto/auto auto;
+  justify-content: space-around;
+  padding: 2vw 0;
+}
+#city1{
+  background-image: url('mumbai.jpeg');
+  background-size: contain;
+  
+}
+#city2{
+  background-image: url('shimla.jpeg');
+  background-size: contain;
+}
+#city3{
+  background-image: url('newyork.jpeg');
+  background-size: contain;
+  color: black;
+}
+#city4{
+  background-image: url('london.jpeg');
+  background-size: contain;
+}
+#city5{
+  background-image: url('tokyo.jpeg');
+  background-size: contain;
+}
+#city6{
+  background-image: url('paris.jpeg');
+  background-size: contain;
+}
