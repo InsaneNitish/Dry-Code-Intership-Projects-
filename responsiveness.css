@@ -1,0 +1,68 @@
+/* CSS rules for desktop screens */
+@media screen and (min-width: 1000px) {
+
+:root{
+  --bgColor : #620096;
+  --secbgColor : #9c4cc7;
+  --fontColor : #fff;
+  --fontCode : monospace;
+  --fontText : cursive;
+  --buttonradii : .4rem;
+  --buttonHeight : 3rem;
+  --fontSize : 1.1rem;
+}
+nav{
+  display: grid;
+  grid: repeat(1,5rem)/25% 40% 35% ;
+  justify-content: space-evenly;
+  font-family: var(--fontCode);
+}
+
+nav ul:nth-child(2){
+  display: grid;
+  grid: auto/repeat(3,auto);
+  justify-content: space-around;
+  grid-gap: .9rem;
+  margin: .5rem 0 0 0;
+}
+
+/*My picture styling goes here*/
+.myImg{
+  background-image: url("dp.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  scale: 0;
+  animation: animScaleUp 2s 1 linear forwards,animImg 4s 2s infinite linear forwards;
+}
+/*My picture styling ends here*/
+
+/*animation for profile description*/
+@keyframes animProfileDrc{
+  0%{
+    max-width: 0;
+    height : 0;
+  }
+  100%{
+    max-width: 100%;
+    height : 35vh;
+  }
+}
+/*projects div styling goes here*/
+.projects{
+  font-size: var(--fontSize);
+  display: none;
+  grid: repeat(3,12rem)/100%;
+  grid-gap: 1rem;
+  margin : 1rem 0;
+  transform: translateX(0);
+  animation: animProject 1.5s 1 linear forwards;
+  scale: 0;
+}
+/*projects stlying ends here*/
+
+}
+
+/* CSS rules for tablet screens */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+
+}
