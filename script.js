@@ -1,4 +1,4 @@
-alert("Sorry for inconvenience Currently API is not working")
+
 const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Seattle';
 const options = {
   method: 'GET',
@@ -101,3 +101,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Paris', opti
   Paris.innerHTML=response.temp+"°C"
   })
   .catch(err => console.error(err));
+
+if(Mumbai.innerHTML=="undefined"){
+  alert("Sorry for inconvenience Currently API is not working")
+}

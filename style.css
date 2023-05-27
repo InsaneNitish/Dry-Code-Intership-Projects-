@@ -111,3 +111,10 @@ html {
   background-image: url('paris.jpeg');
   background-size: contain;
 }
+footer{
+  background: darkgrey;
+}
+footer p{
+  margin: 0 22%;
+  font-size: 3vw;
+}
