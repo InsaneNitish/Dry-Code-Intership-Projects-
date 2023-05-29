@@ -1,9 +1,9 @@
 html {
   height: 100%;
   max-width: 100%;
+  font-size: var(--fontSize);
 }
 /* SCROLLBAR */
-/* Let's get this party started */
 *::-webkit-scrollbar {
     width: 10px;
 }
@@ -27,9 +27,9 @@ html {
   --fontColor : #fff;
   --fontCode : monospace;
   --fontText : cursive;
-  --buttonradii : .41rem;
-  --buttonHeight : 2rem;
-  --fontSize : 3vw;
+  --buttonradii : .4rem;
+  --buttonHeight : 3rem;
+  --fontSize : 1.1rem;
 }
 body{
   overflow-x: hidden;
@@ -113,16 +113,11 @@ nav ul form input{
   0%{
     scale: 0;
   }
-  100%{
-    scale: 1;
-  }
-}
-@keyframes animScaleDown{
-  0%{
-    scale: 1;
+  50%{
+    scale:1;
   }
   100%{
-    scale: 0;
+    scale: .90;
   }
 }
 .profileInfo h2{
@@ -163,20 +158,35 @@ nav ul form input{
   animation: animScaleUp 1s 1 2000ms forwards;
 }
 
+/*picture animation*/
+@keyframes animImg{
+  0%{
+    scale:1;
+  }
+  50%{
+    scale: .88;
+  }
+  100%{
+    scale: 1;
+  }
+}
 
+/*picture animation ends*/
+
+/*My picture styling goes here*/
 .myImg{
   background-image: url("dp.png");
   background-size: contain;
   background-repeat: no-repeat;
   scale: 0;
-  animation: animScaleUp 2s 1 forwards;
+  animation: animScaleUp 2s 1 linear forwards,animImg 2s 2s infinite linear forwards;
 }
-
+/*My picture styling ends here*/
 
 /*animation for profile description*/
 @keyframes animProfileDrc{
   0%{
-    width: 0;
+    max-width: 0;
     height : 0;
   }
   100%{
@@ -187,6 +197,7 @@ nav ul form input{
 
 /*profile description style here*/
 .profileDrc{
+  font-size: var(--fontSize);
   font-family: var(--fontCode);
   max-width: 0%;
   height: 0;
@@ -194,7 +205,7 @@ nav ul form input{
   padding: 1rem;
   border-radius: .6rem;
   display: none;
-  animation: animProfileDrc 2s 1 
+  animation: animProfileDrc 1s 1 
   linear forwards;
 }
 
@@ -211,6 +222,7 @@ nav ul form input{
 
 /*projects div styling goes here*/
 .projects{
+  font-size: var(--fontSize);
   display: none;
   grid: repeat(3,7rem)/100%;
   grid-gap: 1rem;
@@ -220,69 +232,90 @@ nav ul form input{
   scale: 0;
 }
 
-.projects div:nth-child(n){
+.projects .projectBox{
   background: var(--secbgColor);
   border-radius: 1rem;
   border-left: solid .51rem white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.pBg{
+  display: grid;
+  grid: auto/25% 75%;
+  grid-gap: .2rem;
+  padding: 0 1rem;
+  opacity: 1;
+  color: black;
+}
+.pBg:hover{
+  background: grey;
+  opacity: .7;
+  font-weight: bold;
 }
 
+.projects .projectBox:nth-child(1):hover{
+  background-image: url("p1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+   
+}
+.projects .projectBox:nth-child(2):hover{
+  background-image: url("p2.webp");
+  background-size: cover;
+   background-repeat: no-repeat;
+}
+.projects .projectBox:nth-child(3):hover{
+  background-image: url("p3.webp");
+  background-size:cover;
+   background-repeat: no-repeat;
+}
 
+/* SCROLLBAR */
+.projects div:nth-child(n)::-webkit-scrollbar {
+    width: 10px;
+}
 
-/*footer styling from here*/    
+/* Track */
+.projects div:nth-child(n)::-webkit-scrollbar-track {
+    background: var(--bgColor);
+    border: 4px solid transparent;
+    background-clip: content-box;   
+}
+
+/* Handle */
+.projects div:nth-child(n)::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5vw;
+}
+/*projects stlying ends here*/
+
+/*footer styling from here*/
 footer{
-  height: 28vh;
-  display: grid;
-  grid: auto auto /auto;
+  margin: .5rem 0;
+  padding: .42rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
   background: var(--secbgColor);
-  justify-content: space-evenly;
- align-items: centre;
- padding: 3vw;
-  border-radius: .6rem;
-  margin: 1rem 0 0 0;
+  border-radius: var(--buttonradii);
 }
 .contact{
-  width: 100%;
-  height: 20vh;    
   display: grid;
-  grid: 20vh/auto auto auto;
-justify-content: space-evenly;
- align-items: centre;
+  grid: repeat(3,auto)/auto;
+  grid-gap: .5rem;
+  margin: auto;
+  justify-content: centre;
 }
-
-.contact div:nth-child(1) img{
-   width: 15vw;
-   aspect-ratio: 1;
-  border-radius: 50%;
-  box-shadow: 0vw 0vw 5vw 0vw white;
-border: .8vw solid white;
-z-index:10;
+.logo img{ 
+  width: 3rem;
+  aspect-ratio: 1;
+  margin: auto;
 }
-
-.contact div:nth-child(1){
-  padding: 4.5vh 0vw;
+.footer-info{
+  font-family: var(--fontCode);
+  margin: auto;
 }
-
-.contact div:nth-child(2) span a{
-  color: var(--fontColor);
-  font-size: 5.8vw;
-  text-decoration-line: none;
-}
-
-
-.contact div:nth-child(2){
-  padding: 7.2vh 0vw;
-}
-
-.contact div:nth-child(3) i{
-  margin: .3vw;
-  font-size: 5vw;
-  color: var(--fontColor);
-}
-.contact div:nth-child(3){
-  padding: 7.70013vh 0vh;
-}
-.footer-info b{
-  font-size: 3vw;
-color: var(--fontColor);
-font-family: var(--fontCode);
+a{
+  text-decoration: none;
+  color: white;
 }
