@@ -28,22 +28,24 @@ function showWeather(city) {
       // sunset: 1683343558
       temp.innerHTML= response.temp + "°C"
       // wind_degrees: 200
+      
+     if(Mumbai.innerHTML==="undefined°C"){
+  alert("Sorry for inconvenience Currently API is not working")
+}
+if(temp.innerHTML==="undefined°C"){
+  alert("Please enter Correct city Name")
+}
       wind_speed.innerHTML=response.wind_speed + " Km/h"
       let w_img=document.getElementById('w_img');
       let c_bg=document.getElementById('c_bg');
       if(response.cloud_pct>70){
-        w_img.src="rainy.svg"
-        c_bg.style.backgroundImage= "linear-gradient(to right, #505050, #636363, #777777, #8b8b8b, #a0a0a0)"
+        w_img.src="rainy.svg";        c_bg.style.backgroundImage= "linear-gradient(to right, #505050, #636363, #777777, #8b8b8b, #a0a0a0)"
       }
-      else if(response.cloud_pct>40){
-        w_img.src="thunderstorm.svg"
-        
+      else if(response.cloud_pct>50){        w_img.src="thunderstorm.svg";     c_bg.style.backgroundImage="linear-gradient(0deg, rgba(49,49,49,1) 5%, rgba(137,159,232,1) 54%, rgba(132,132,133,1) 94%)"
       }
-      else if(response.cloud_pct>10)
-       w_img.src="partlyCloudy.svg";
+      else if(response.cloud_pct>15){     w_img.src="partlyCloudy.svg";     c_bg.style.backgroundImage="linear-gradient(0deg, rgba(244,238,248,1) 10%, rgba(86,116,133,1) 51%, rgba(242,237,237,1) 100%)"}
       else{
-w_img.src="sunny.svg"
-        c_bg.style.backgroundImage=" linear-gradient(to top, #fdcf74, #cde493, #abefc3, #a9f3ec, #c7f2ff)";
+w_img.src="sunny.svg";      c_bg.style.backgroundImage=" linear-gradient(to top, #fdcf74, #cde493, #abefc3, #a9f3ec, #c7f2ff)"
       }
     })
     .catch(err => console.error(err));
@@ -102,6 +104,3 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Paris', opti
   })
   .catch(err => console.error(err));
 
-if(Mumbai.innerHTML=="undefined"){
-  alert("Sorry for inconvenience Currently API is not working")
-}
